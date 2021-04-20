@@ -5,11 +5,39 @@
     android:layout_height="match_parent"
     tools:context=".CelsiusFragment">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_height="match_parent"
         android:gravity="center"
-        android:text="Celsius Fragment" />
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:background="#9BDAF6"
+            android:id="@+id/studentidCelsius"
+            android:gravity="center"
+            android:text="Student ID" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:id="@+id/CelsiusResultID"
+            android:text="Result" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#27B0C1"
+            android:hint="Enter Celsius Temprature"
+            android:id="@+id/CelsiusTempretureID"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/CelsiusCalculteId"
+            android:text="Calculate" />
+
+
+    </LinearLayout>
 
 </FrameLayout>

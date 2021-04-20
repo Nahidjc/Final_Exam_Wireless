@@ -23,10 +23,12 @@ EditText studentidText,passwordText;
         String password = passwordText.getText().toString();
         char checkPass = password.charAt(4);
         if(checkPass=='s'){
-            Toast.makeText(this, "Login failed!Enter your password again!", Toast.LENGTH_SHORT).show();
-        }else{
             Intent myIntent = new Intent(LoginActivity.this,MainActivity.class);
-             startActivity(myIntent );
+            myIntent.putExtra("StudentID",studentidText.getText().toString());
+            startActivity(myIntent );
+
+        }else{
+            Toast.makeText(this, "Login failed!Enter your password again!", Toast.LENGTH_SHORT).show();
         }
 
     }
