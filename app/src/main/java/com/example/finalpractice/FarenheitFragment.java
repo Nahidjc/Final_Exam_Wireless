@@ -12,6 +12,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 
 public class FarenheitFragment extends Fragment {
 TextView StudentIDText,resultText;
@@ -38,7 +41,11 @@ Button Calculate;
      Double value = Double.parseDouble(farenheitValue);
      Double Celsius = (5 *(value - 32))/ 9;
      resultText.setText(String.format("%.2f",Celsius));
-     FarenheitValue.setText("");
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference root = database.getReference("Student ID and Farenheit to Celsius");
+    String StudentID = getArguments().getString("StudentID");
+    root.child(StudentID).setValue(String.format("%.2f",Celsius));
+    FarenheitValue.setText("");
 
     }
 }

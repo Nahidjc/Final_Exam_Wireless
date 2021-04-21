@@ -5,26 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
+   android:layout_marginTop="150dp"
     tools:context=".LoginActivity">
 
     <EditText
         android:id="@+id/studentid"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:background="#B5E4FA"
         android:hint="Enter Your Student Id"
-        android:textSize="30dp" />
+        android:textSize="20dp" />
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="#B5E4FA"
+        android:inputType="textPassword"
+        android:gravity="center"
         android:hint="Enter Your Password"
-        android:textSize="30dp"
+        android:textSize="20dp"
         android:id="@+id/passwordID"/>
 
     <Button
         android:id="@+id/LoginButtonID"
         android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
         android:onClick="LoginFunction"
         android:layout_height="wrap_content"
         android:text="Login" />

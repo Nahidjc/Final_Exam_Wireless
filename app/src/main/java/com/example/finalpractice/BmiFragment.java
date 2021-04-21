@@ -12,6 +12,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import javax.microedition.khronos.egl.EGLDisplay;
 
 
@@ -21,6 +24,7 @@ EditText heightText,weightText;
 Double BMI;
 Button Calculate;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -28,6 +32,9 @@ Button Calculate;
         View root = inflater.inflate(R.layout.fragment_bmi, container, false);
         heightText = root.findViewById(R.id.BMIheightID);
         weightText = root.findViewById(R.id.BMIweightID);
+        String StudentID = getArguments().getString("StudentID");
+        resultText = root.findViewById(R.id.BMIresult);
+        resultText.setText(StudentID);
         Calculate = root.findViewById(R.id.CalculateBmiID);
         Calculate.setOnClickListener(this::CalculateBMIFunction);
         return  root;
@@ -45,6 +52,10 @@ Button Calculate;
         }else{
             Toast.makeText(this.getActivity(), "Not Overweight", Toast.LENGTH_SHORT).show();
         }
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference root = database.getReference("Student ID and BMI");
+        String StudentID = getArguments().getString("StudentID");
+        root.child(StudentID).setValue(BMI);
         heightText.setText("");
         weightText.setText("");
     }

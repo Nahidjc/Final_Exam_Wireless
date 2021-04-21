@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 
 public class CelsiusFragment extends Fragment {
     TextView StudentIDText,resultText;
@@ -36,6 +39,10 @@ public class CelsiusFragment extends Fragment {
         Double value = Double.parseDouble(celsiusValue);
         Double Farenheit = (9*value + 160)/5;
         resultText.setText(Farenheit.toString());
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference root = database.getReference("Student ID and Celsius to Farenheit");
+        String StudentID = getArguments().getString("StudentID");
+        root.child(StudentID).setValue(Farenheit);
         CelsiusValue.setText("");
 
     }

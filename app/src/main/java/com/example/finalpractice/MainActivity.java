@@ -23,7 +23,11 @@ public class MainActivity extends AppCompatActivity {
 
         Fragment myFragment = null;
         if(view.getId()==R.id.BmiId){
+            String StudentId = getIntent().getStringExtra("StudentID");
+            Bundle bundle = new Bundle();
+            bundle.putString("StudentID",StudentId);
             myFragment = new BmiFragment();
+            myFragment.setArguments(bundle);
         }else if(view.getId()==R.id.FarenhiteID){
             String StudentId = getIntent().getStringExtra("StudentID");
             Bundle bundle = new Bundle();
@@ -32,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
             myFragment.setArguments(bundle);
         }else if (view.getId()==R.id.CelsiusID){
             String StudentId = getIntent().getStringExtra("StudentID");
-//            Toast.makeText(this, StudentId, Toast.LENGTH_SHORT).show();
             Bundle bundle = new Bundle();
             bundle.putString("StudentID",StudentId);
             myFragment = new CelsiusFragment();

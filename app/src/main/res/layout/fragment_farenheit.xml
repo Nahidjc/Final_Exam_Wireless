@@ -7,12 +7,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
+       android:layout_marginTop="60dp"
         android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
             android:gravity="center"
             android:id="@+id/FarenheitResultID"
             android:text="Result" />
@@ -20,7 +20,8 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_gravity="center"
-            android:background="#2D7393"
+            android:background="#A3DFFA"
+            android:layout_marginTop="20dp"
             android:id="@+id/studentidFarenheit"
             android:gravity="center"
             android:text="Student ID" />
@@ -28,12 +29,16 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:background="#27B0C1"
+            android:background="#ACD3F3"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:textSize="15dp"
             android:hint="Enter Farenheit Tempreture"
             android:id="@+id/FarenhiteTempretureID"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:id="@+id/FarenhiteCalculteId"
             android:text="Calculate"/>
 
