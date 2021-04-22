@@ -23,12 +23,9 @@ TextView resultText;
 EditText heightText,weightText;
 Double BMI;
 Button Calculate;
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_bmi, container, false);
         heightText = root.findViewById(R.id.BMIheightID);
         weightText = root.findViewById(R.id.BMIweightID);

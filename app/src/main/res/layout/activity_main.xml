@@ -34,6 +34,12 @@
             android:layout_weight="1"
             android:onClick="FragmentChangeFunction"
             android:text="Celsius to Farenheit" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:onClick="allUserFunction"
+            android:text="All user"/>
 
         <fragment
             android:layout_width="match_parent"
